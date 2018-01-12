@@ -24,6 +24,10 @@ public class AuthController {
 
     @RequestMapping("/auth")
     public String auth(){
+        /**
+         * SNSAPI_BASE 用于用户关注的情况
+         * SNSAPI_USERINFO 用于用户未关注的情况
+         */
         String authorizationUrl = wxMpService.oauth2buildAuthorizationUrl("http://wwx.nat300.top/info", WxConsts.OAuth2Scope.SNSAPI_USERINFO, null);
         return "redirect:"+authorizationUrl;
     }
