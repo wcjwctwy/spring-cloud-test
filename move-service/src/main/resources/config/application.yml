@@ -1,0 +1,5 @@
+server:
+  port: 8082
+user:
+  service:
+    feign: http://10.20.7.23:8081
