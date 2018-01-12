@@ -24,7 +24,7 @@ public class AuthController {
 
     @RequestMapping("/auth")
     public String auth(){
-        String authorizationUrl = wxMpService.oauth2buildAuthorizationUrl("http://wwx.nat300.top/info", WxConsts.OAuth2Scope.SNSAPI_BASE, null);
+        String authorizationUrl = wxMpService.oauth2buildAuthorizationUrl("http://wwx.nat300.top/info", WxConsts.OAuth2Scope.SNSAPI_USERINFO, null);
         return "redirect:"+authorizationUrl;
     }
 
