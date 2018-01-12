@@ -4,17 +4,20 @@ import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
+import me.chanjar.weixin.mp.bean.kefu.WxMpKefuMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+@Controller
 @Slf4j
 public class WxCheckController {
 
@@ -31,6 +34,7 @@ public class WxCheckController {
         return echostr;
     }
 
+    @ResponseBody
     @RequestMapping("/sell")
     public String get(HttpServletRequest request) throws Exception {
         String signature = request.getParameter("signature");
@@ -75,6 +79,11 @@ public class WxCheckController {
 
         log.info("不可识别的加密类型");
         return "不可识别的加密类型";
+    }
+
+    @RequestMapping("/index")
+    public String index(){
+        return "index";
     }
 
 }

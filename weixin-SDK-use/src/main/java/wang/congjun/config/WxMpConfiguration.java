@@ -28,6 +28,9 @@ public class WxMpConfiguration {
     }
 
 
-
+    @Bean
+    public String getOpen(){
+        return "";
+    }
 
 }

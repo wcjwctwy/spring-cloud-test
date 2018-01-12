@@ -2,9 +2,23 @@ server:
   port: 8080
 
 
-
 wxmp:
-  appId: wx1c0d1f940f43ecdd
-  secret: 054e5deec01991933740a64a5a722175
-  token: myfirstwechat
-  aesKey: ReSgRNcncHgSZzAuMsaBBNJOWyzQMK44SOy0B1VrW0T
+  appId: wx93e3258af48a4a75
+  secret: e8b6f08d9d7a9dc2fa842d1efa21dc26
+  token: yangguofumalatang
+  aesKey: e2y7E7nJkWr8eUtvKbcsSeaWkubk6OhuoOjFKmu2LR9
+
+wechat:
+  pay:
+    appId: wx93e3258af48a4a75         #公众号的id
+    mchId: 1493755722                 #微信支付商户的id
+    mchKey: yangguofu18120132039yangguofu123   #微信支付商户的密钥
+    subAppId:   #可以为空
+    subMchId:   #可以为空
+    keyPath: \var\wx\cert\apiclient_cert.p12  #下载的证书放置的路径
+    notifyUrl: http://wwx.nat300.top/pay/result
+    tradeType: JSAPI
+spring:
+  thymeleaf:
+    cache: false
+
